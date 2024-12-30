@@ -1,36 +1,32 @@
 [
     {
-        "id":1,
-        "name":"ahmed Mohamed Abubakr",
-        "jobTitle":"Full-stack web developer",
-        "age":24,
-        "image":"images/personal/profile-img.jpg",
+        "name": "ahmed Mohamed Abubakr",
+        "jobTitle": "Full-stack web developer",
+        "age": 24,
+        "image": "images/personal/profile-img.jpg",
         "objective": "To obtain a challenging data scientist position in a dynamic and innovative organization where I can use my technical and analytical skills.",
-        "contacts":{
-            "phone":"201113284597",
-            "email":"ahmed.mo.abubakr@gmail.com",
+        "contacts": {
+            "phone": "201113284597",
+            "email": "ahmed.mo.abubakr@gmail.com",
             "portfolio": "abubakr.epizy.com",
             "github": "https://github.com/abubakr3800",
             "linkedin": "https://www.linkedin.com/in/ahmed-m-abubakr-%F0%9F%87%B5%F0%9F%87%B8-491543196/",
             "instagram": "https://www.instagram.com/ahmedabubakr2000/",
-            "facebook":"https://www.facebook.com/profile.php?id=100011545385843",
-            "address":"Sohag , Egypt"
-        }
-        ,
-        "education":{
-            "school":"Sohag University",
-            "degree":"Bachelor of Electronics and Communications Engineering",
-            "year":"2023"
-        }
-        ,
-        "work":[
+            "facebook": "https://www.facebook.com/profile.php?id=100011545385843",
+            "address": "Sohag , Egypt"
+        },
+        "education": {
+            "school": "Sohag University",
+            "degree": "Bachelor of Electronics and Communications Engineering",
+            "year": "2023"
+        },
+        "work": [
             {
-                "company":"OCTO-TECH",
-                "position":"Software Engineer",
-                "facebook":"https://www.facebook.com/octoteccompany"
+                "company": "OCTO-TECH",
+                "position": "Software Engineer",
+                "facebook": "https://www.facebook.com/octoteccompany"
             }
-        ]
-        ,
+        ],
         "certifications": [
             "NDG Linux Essentials",
             "CCNA v7: Introduction to Networks",
@@ -38,7 +34,7 @@
             "CCNA v7: Enterprise Networking, Security, and Automation",
             "Introduction to Cybersecurity"
         ],
-        "hobbies":[
+        "hobbies": [
             "Reading", "Hiking", "Coding"
         ],
         "volunteering": [
@@ -46,7 +42,7 @@
                 "role": "Innovation Ambassador",
                 "organization": "Technology Innovation & Entrepreneurship Center | TIEC ",
                 "achievements": [
-                    "organaizing trainings and operat them",
+                    "organizing trainings and operating them",
                     "Photo coverage of events"
                 ]
             },
@@ -62,35 +58,34 @@
                 ]
             }
         ],
-        "skills":[
+        "skills": [
             {
-                "name":"front-end native",
+                "name": "front-end native",
                 "level": "expert",
-                "description": "I have a good understanding of html5 , css3 and basics of js \n Also I can use bootstarp library very well in diffrent ways "
+                "description": "I have a good understanding of html5, css3 and basics of js. Also, I can use bootstrap library very well in different ways."
             },
             {
                 "name": "Back-end native",
                 "level": "Mid level developer",
-                "description": "I have a basic understanding of PHP programming language and How to connect it with databases and create api."
-            }
-            ,   
+                "description": "I have a basic understanding of PHP programming language and how to connect it with databases and create APIs."
+            },
             {
                 "name": "UI & UX",
                 "level": "beginner",
                 "description": "I have a good understanding of UI concepts."
             },
             {
-                "name":"analog ic Layout",
-                "level":"beginner",
-                "description":"I have a good understanding of cadence tool in design and create layout for ic's."
+                "name": "analog IC Layout",
+                "level": "beginner",
+                "description": "I have a good understanding of Cadence tool in design and create layout for ICs."
             },
             {
-                "name":"Linux Operating System",
-                "level":"mid level",
-                "description":"I have a good understanding of Linux operating system and how to use as a main operating system."
+                "name": "Linux Operating System",
+                "level": "mid level",
+                "description": "I have a good understanding of Linux operating system and how to use it as a main operating system."
             }
         ],
-        "interests": ["Science", "Anime", "Technology" ] ,
+        "interests": ["Science", "Anime", "Technology"],
         "experience": [
             {
                 "role": "Teaching Assistant",
@@ -119,30 +114,30 @@
             {
                 "role": "Workshop Instructor",
                 "organization": "Faculty of Medicine",
-                "duration":"single session",
+                "duration": "single session",
                 "responsibilities": [
                     "Frontend and backend",
                     "Introduction to programming",
-                    "relation between programming and medical field"
+                    "Relation between programming and medical field"
                 ]
             }
         ],
-        "portfolio":[
+        "portfolio": [
             {
-                "title":"Akarat",
-                "description":"Project for a Company for renting apartments and real estate",
-                "images":[
+                "title": "Akarat",
+                "description": "Project for a company for renting apartments and real estate",
+                "images": [
                     "images/portfolio/akar/akar.jpg",
                     "images/portfolio/akar/akar_2.jpg",
                     "images/portfolio/akar/akar_3.jpg",
                     "images/portfolio/akar/akar_4.jpg"
                 ],
-                "link":"https://area-web.github.io/ahmed2/"
+                "link": "https://area-web.github.io/ahmed2/"
             },
             {
-                "title":"Hekayat salma",
-                "description":"Project for a Company for renting apartments and real estate",
-                "images":[
+                "title": "Hekayat salma",
+                "description": "Project for a company for renting apartments and real estate",
+                "images": [
                     "images/portfolio/salma/salma.jpg",
                     "images/portfolio/salma/salma_2.jpg",
                     "images/portfolio/salma/salma_3.jpg",
@@ -150,12 +145,12 @@
                     "images/portfolio/salma/salma_5.jpg",
                     "images/portfolio/salma/salma_6.jpg"
                 ],
-                "link":"http://hekayat-salma.epizy.com/"
+                "link": "http://hekayat-salma.epizy.com/"
             },
             {
-                "title":"Edu",
-                "description":"Project for a Company for renting apartments and real estate",
-                "images":[
+                "title": "Edu",
+                "description": "Project for a company for renting apartments and real estate",
+                "images": [
                     "images/portfolio/edu/edu.jpg",
                     "images/portfolio/edu/edu_2.jpg",
                     "images/portfolio/edu/edu_3.jpg",
@@ -163,18 +158,17 @@
                     "images/portfolio/edu/edu_5.jpg",
                     "images/portfolio/edu/edu_6.jpg"
                 ],
-                "link":"https://area-web.github.io/edu/"
+                "link": "https://area-web.github.io/edu/"
             }
         ],
-        "testmonials":[
+        "testimonials": [
             {
-                "message":"",
-                "author":""
+                "message": "",
+                "author": ""
             }
         ]
     },
     {
-        "id":2,
         "name": "Nada Harby Motawea",
         "jobTitle": "Front-End Developer",
         "contacts": {
@@ -275,10 +269,9 @@
                 "level": "Advanced"
             },
             {
-                "name": "UI/UX",
+                "name": "UI/UX   ",
                 "level": "Intermediate"
             }
         ]
     }
 ]
-           
