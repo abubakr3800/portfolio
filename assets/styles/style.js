@@ -1,7 +1,7 @@
 axios.get("manual.json").then(res=>{
     res.data.forEach(user => {
         if (document.URL.indexOf("id") != -1) {
-            var id = document.URL.indexOf("&") ? document.URL.substring(document.URL.indexOf("id"),document.URL.indexOf("&")).split("=")[1] : document.URL.substring(document.URL.indexOf("id")).split("=")[1] ;
+            var id = document.URL.indexOf("&") != -1 ? document.URL.substring(document.URL.indexOf("id"),document.URL.indexOf("&")).split("=")[1] : document.URL.substring(document.URL.indexOf("id"),document.URL.length).split("=")[1] ;
             if (user.id == Number(id)) {
                 console.log(user.name);
                 document.getElementById('hero-title').innerText = user.name;
