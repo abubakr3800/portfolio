@@ -10,7 +10,7 @@ axios.get("manual.json").then(res=>{
                 document.getElementById('about-description').innerText = user.objective;
                 document.getElementById('personal-image').src = user.image;
                 document.getElementById('personal-image').classList.add("w-100");
-                document.getElementById('education').innerHTML = "<i class='fa-solid fa-school'></i> Education";
+                document.getElementById('education').innerHTML = "<a onclick=showPersonalDetails('education')><i class='fa-solid fa-school'></i> Education</a>";
                 document.getElementById('work').innerHTML = "<i class='fa-solid fa-briefcase'></i> Work";
                 document.getElementById('certifications').innerHTML = '<i class="fa-solid fa-certificate"></i> Certifications';
                 document.getElementById('hobbies').innerHTML = "<i class='fa-solid fa-gamepad'></i> Hobbies";
@@ -27,7 +27,7 @@ axios.get("manual.json").then(res=>{
                     // document.getElementById('modalGoal').innerText = stageData.Goal;
                     // document.getElementById('modalActions').innerHTML = stageData["Key Actions"].map(action => `<li>${action}</li>`).join('');
                     // document.getElementById('modalCourses').innerHTML = stageData["Recommended Courses"].map(course => `<li>${course}</li>`).join('');
-                    stageModal.show();
+                    personalModal.show();
                 }
 
                 const portfolioContainer = document.getElementById('portfolio-container');
@@ -48,6 +48,8 @@ axios.get("manual.json").then(res=>{
                     })
                 });
             }
+        }else{
+            document.location.href = "404.html"
         }
     }) 
 })
