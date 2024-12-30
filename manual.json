@@ -29,8 +29,36 @@
             }
         ]
         ,
+        "certifications": [
+            "NDG Linux Essentials",
+            "CCNA v7: Introduction to Networks",
+            "CCNA v7: Switching, Routing, and Wireless Essentials",
+            "CCNA v7: Enterprise Networking, Security, and Automation",
+            "Introduction to Cybersecurity"
+        ],
         "hobbies":[
             "Reading", "Hiking", "Coding"
+        ],
+        "volunteering": [
+            {
+                "role": "Innovation Ambassador",
+                "organization": "Technology Innovation & Entrepreneurship Center | TIEC ",
+                "achievements": [
+                    "organaizing trainings and operat them",
+                    "Photo coverage of events"
+                ]
+            },
+            {
+                "role": "Student activity leader",
+                "organization": "SMART student activity ",
+                "achievements": [
+                    "Best member in logistics 2019",
+                    "Best leader on AC section 2020",
+                    "Team leader 2021",
+                    "Talk about team at ITI 2020",
+                    "Talk about web development in ITI 2021"
+                ]
+            }
         ],
         "skills":[
             {
@@ -52,7 +80,12 @@
             {
                 "name":"analog ic Layout",
                 "level":"beginner",
-                "description":"I have a good understanding of analog ic design concepts."
+                "description":"I have a good understanding of cadence tool in design and create layout for ic's."
+            },
+            {
+                "name":"Linux Operating System",
+                "level":"mid level",
+                "description":"I have a good understanding of Linux operating system and how to use as a main operating system."
             }
         ],
         "interests": ["Science", "Anime", "Technology" ] ,
@@ -141,22 +174,21 @@
                 "full_image_link": "assets/img/portfolio/akar/akar_4.jpg"
             }
         ],
+        "portofolio":[
+            {
+                "title":"Akarat",
+                "description":"Project for a Company for renting apartments and real estate",
+                "images":[
+                    "assets/img/portfolio/akar/akar.jpg"
+                ],
+                "link":"https://area-web.github.io/ahmed2/"
+            }
+        ],
         "testmonials":[
             {
                 "message":"",
                 "author":""
             }
-        ],
-        "portofolio":[
-        {
-            "title":"Akarat",
-            "description":"Project for a Company for renting apartments and real estate",
-            "images":[
-                "assets/img/portfolio/akar/akar.jpg"
-            ],
-            "link":"https://area-web.github.io/ahmed2/"
-        }
         ]
-
     }
 ]
