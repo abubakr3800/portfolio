@@ -1,0 +1,104 @@
+{
+    "name": "Ahmed Mohamed Abubakr",
+    "title": "Electronics Engineer",
+    "location": "Sohag, Egypt",
+    "contact": {
+      "phone": "01113284597",
+      "email": "ahmed.mo.abubakr@gmail.com",
+      "portfolio": "abubakr.epizy.com",
+      "github": "https://github.com/your-profile",
+      "badges": "https://drive.google.com/drive/folders/1dyoGEIzY0eiE4K4TKljHUaGJ-3g5nP0c"
+    },
+    "objective": "To obtain a challenging data scientist position in a dynamic and innovative organization where I can use my technical and analytical skills.",
+    "education": [
+      {
+        "institution": "Suhag University",
+        "degree": "Bachelor of Electronics and Communications Engineering",
+        "year": "2023"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Teaching Assistant",
+        "organization": "Higher Engineering Institute",
+        "duration": "2023-2024",
+        "responsibilities": [
+          "Electromagnetic waves",
+          "Microwaves",
+          "Computer interfacing",
+          "Electrical circuits",
+          "Electronics in lab"
+        ]
+      },
+      {
+        "role": "Trainer",
+        "organization": "Creativa Sohag",
+        "duration": "Mar 2024",
+        "responsibilities": [
+          "Introduction to programming",
+          "How to become a frontend developer",
+          "How to be a backend developer",
+          "How to be a freelancer in web development",
+          "How to compute a website"
+        ]
+      },
+      {
+        "role": "Workshop Instructor",
+        "organization": "Faculty of Medicine",
+        "responsibilities": [
+          "Frontend and backend",
+          "Introduction to programming"
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Analog Layout Design and Verification",
+        "sponsor": "Si-Vision",
+        "year": "2022-2023",
+        "description": "Analog Layout Design and its Verifications (DRC, LVS, PEX) with degree (95% excellent)"
+      },
+      {
+        "title": "SMART Library",
+        "link": "smart.epizy.com"
+      },
+      {
+        "title": "Target Co-Workspace",
+        "link": "https://github.com/your-profile"
+      }
+    ],
+    "certifications": [
+      "NDG Linux Essentials",
+      "CCNA v7: Introduction to Networks",
+      "CCNA v7: Switching, Routing, and Wireless Essentials",
+      "CCNA v7: Enterprise Networking, Security, and Automation",
+      "Introduction to Cybersecurity"
+    ],
+    "hackathons": [
+      {
+        "name": "Start Hackathon",
+        "role": "Competitor",
+        "responsibility": "Responsible for APIs between model and database"
+      }
+    ],
+    "volunteering": [
+      {
+        "role": "Innovation Ambassador",
+        "organization": "TIEC",
+        "achievements": [
+          "Best member in logistics 2019",
+          "Best leader on AC section 2020",
+          "Team leader 2021",
+          "Talk about team at ITI 2020",
+          "Talk about web development in ITI 2021"
+        ]
+      }
+    ],
+    "skills": [
+      "Linux Operating System",
+      "Cadence Software",
+      "Web Development (PHP, JavaScript, C++, Python)",
+      "Fluent English",
+      "Strong Communication and Presentation"
+    ]
+  }

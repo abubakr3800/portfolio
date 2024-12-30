@@ -1,0 +1,162 @@
+[
+    {
+        "name":"ahmed Mohamed Abubakr",
+        "age":24,
+        "image":"images/profile-img.jpg",
+        "objective": "To obtain a challenging data scientist position in a dynamic and innovative organization where I can use my technical and analytical skills.",
+        "contacts":{
+            "phone":"201113284597",
+            "email":"ahmed.mo.abubakr@gmail.com",
+            "portfolio": "abubakr.epizy.com",
+            "github": "https://github.com/abubakr3800",
+            "linkedin": "https://www.linkedin.com/in/ahmed-m-abubakr-%F0%9F%87%B5%F0%9F%87%B8-491543196/",
+            "instagram": "https://www.instagram.com/ahmedabubakr2000/",
+            "facebook":"https://www.facebook.com/profile.php?id=100011545385843",
+            "address":"Sohag , Egypt"
+        }
+        ,
+        "education":{
+            "school":"Sohag University",
+            "degree":"Bachelor of Electronics and Communications Engineering",
+            "year":"2023"
+        }
+        ,
+        "work":[
+            {
+                "company":"OCTO-TECH",
+                "position":"Software Engineer",
+                "facebook":"https://www.facebook.com/octoteccompany"
+            }
+        ]
+        ,
+        "hobbies":[
+            "Reading", "Hiking", "Coding"
+        ],
+        "skills":[
+            {
+                "name":"front-end native",
+                "level": "expert",
+                "description": "I have a good understanding of html5 , css3 and basics of js \n Also I can use bootstarp library very well in diffrent ways "
+            },
+            {
+                "name": "Back-end native",
+                "level": "Mid level developer",
+                "description": "I have a basic understanding of PHP programming language and How to connect it with databases and create api."
+            }
+            ,   
+            {
+                "name": "UI & UX",
+                "level": "beginner",
+                "description": "I have a good understanding of UI concepts."
+            },
+            {
+                "name":"analog ic Layout",
+                "level":"beginner",
+                "description":"I have a good understanding of analog ic design concepts."
+            }
+        ],
+        "interests": ["Science", "Anime", "Technology" ] ,
+        "awards": {
+            "award1": "Best Employee of the Year",
+            "award2": "Outstanding Contribution to the Field",
+            "award3": "Innovation Award"
+        },
+        "experience": [
+            {
+                "role": "Teaching Assistant",
+                "organization": "Higher Engineering Institute",
+                "duration": "2023-2024",
+                "responsibilities": [
+                    "Electromagnetic waves",
+                    "Microwaves",
+                    "Computer interfacing",
+                    "Electrical circuits",
+                    "Electronics in lab"
+                ]
+            },
+            {
+                "role": "Trainer",
+                "organization": "Creativa Sohag",
+                "duration": "Mar 2024 - Now",
+                "responsibilities": [
+                "Introduction to programming",
+                "How to become a frontend developer",
+                "How to be a backend developer",
+                "How to be a freelancer in web development",
+                "How to compute a website"
+                ]
+            },
+            {
+                "role": "Workshop Instructor",
+                "organization": "Faculty of Medicine",
+                "duration":"single session",
+                "responsibilities": [
+                    "Frontend and backend",
+                    "Introduction to programming",
+                    "relation between programming and medical field"
+                ]
+            }
+        ],
+        "projects": [
+            {
+                "category": "akar",
+                "title": "Akar 1",
+                "image": "assets/img/portfolio/akar/akar.jpg",
+                "detail_link": "https://area-web.github.io/ahmed2/",
+                "full_image_link": "assets/img/portfolio/akar/akar.jpg"
+            },
+            {
+                "category": "education",
+                "title": "Education 1",
+                "image": "assets/img/portfolio/edu/edu.jpg",
+                "detail_link": "https://area-web.github.io/edu/",
+                "full_image_link": "assets/img/portfolio/edu/edu.jpg"
+            },
+            {
+                "category": "hekayat salma",
+                "title": "Hekayat Salma 1",
+                "image": "assets/img/portfolio/salma/salma.jpg",
+                "detail_link": "http://hekayat-salma.epizy.com/",
+                "full_image_link": "assets/img/portfolio/salma/salma.jpg"
+            },
+            {
+                "category": "akar",
+                "title": "Akar 2",
+                "image": "assets/img/portfolio/akar/akar_2.jpg",
+                "detail_link": "https://area-web.github.io/ahmed2/",
+                "full_image_link": "assets/img/portfolio/akar/akar_2.jpg"
+            },
+            {
+                "category": "akar",
+                "title": "Akar 3",
+                "image": "assets/img/portfolio/akar/akar_3.jpg",
+                "detail_link": "https://area-web.github.io/ahmed2/",
+                "full_image_link": "assets/img/portfolio/akar/akar_3.jpg"
+            },
+            {
+                "category": "akar",
+                "title": "Akar 4",
+                "image": "assets/img/portfolio/akar/akar_4.jpg",
+                "detail_link": "https://area-web.github.io/ahmed2/",
+                "full_image_link": "assets/img/portfolio/akar/akar_4.jpg"
+            }
+        ],
+        "testmonials":[
+            {
+                "message":"",
+                "author":""
+            }
+        ],
+        "portofolio":[
+        {
+            "title":"Akarat",
+            "description":"Project for a Company for renting apartments and real estate",
+            "images":[
+                "assets/img/portfolio/akar/akar.jpg"
+            ],
+            "link":"https://area-web.github.io/ahmed2/"
+        }
+        ]
+
+    }
+]
