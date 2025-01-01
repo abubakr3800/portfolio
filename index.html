@@ -132,6 +132,12 @@
     <script src="assets/glightbox/glightbox.min.js"></script>
     <script src="assets/swiper/swiper-bundle.min.js"></script>
     <script src="assets/fontawesome/all.min.js"></script>
+    <script>
+        // طلب إذن الإشعارات
+        if (Notification.permission !== "granted") {
+            Notification.requestPermission();
+        }
+    </script>
     <!-- <script>
         // Load data from JSON
         axios.get('data.json')
