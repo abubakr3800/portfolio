@@ -345,8 +345,8 @@ class Portfolio {
     populateContact() {
         const { personal } = this.data;
         
-        document.getElementById('contact-email').textContent = personal.email;
-        document.getElementById('contact-phone').textContent = personal.phone;
+        document.getElementById('contact-email').innerHTML = `<a class="text-secondary" href=mailto:${personal.email}>${personal.email}</a>`;
+        document.getElementById('contact-phone').innerHTML = `<a class="text-secondary" href=tel:2${personal.phone}>${personal.phone}</a>`;
         document.getElementById('contact-location').textContent = personal.location;
     }
 
