@@ -3,201 +3,365 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"> -->
-    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/glightbox/glightbox.min.css">
-    <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="assets/fontawesome/all.min.css">
-
-    <link rel="stylesheet" href="assets/styles/style.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
+    <title>Ahmed Mohamed Abubakr - Portfolio</title>
+    <link href="assets/library/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/venobox@2.0.7/dist/venobox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" id="nav-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search For Another user" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+    <!-- Animated Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element" style="--delay: 0s; --duration: 20s;"></div>
+        <div class="floating-element" style="--delay: 5s; --duration: 25s;"></div>
+        <div class="floating-element" style="--delay: 10s; --duration: 30s;"></div>
+        <div class="floating-element" style="--delay: 15s; --duration: 22s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Ahmed Abubakr</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
+
     <!-- Hero Section -->
-    <section class="hero bg-dark text-white">
-        <div>
-            <h1 id="hero-title">Welcome to My Portfolio</h1>
-            <p id="hero-subtitle">Discover My Work and Projects</p>
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-white mb-4" id="hero-name">Ahmed Mohamed Abubakr</h1>
+                    <p class="lead text-white-50 mb-4" id="hero-title">R&D Engineer | Electronics & Communications</p>
+                    <p class="text-white-50 mb-4" id="hero-objective"></p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-rocket me-2"></i>View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Contact Me
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <i class="fas fa-microchip fa-10x text-primary"></i>
+                        <div class="hero-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span class="scroll-text">Scroll Down</span>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4">About Me</h2>
-        <p id="about-description" class="text-center"></p>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="https://via.placeholder.com/350x200" alt="About Image" id="personal-image">
-            </div>
-            <div class="col-md-6">
-                <h5 id="job-title"></h5>
-                <div class="row" id="personal-data">
-                    <div class="col-md-6 col-12 p-4" id="education"></div>
-                    <div class="col-md-6 col-12 p-4" id="work"></div>
-                    <div class="col-md-6 col-12 p-4" id="certifications"></div>
-                    <div class="col-md-6 col-12 p-4" id="hobbies"></div>
-                    <div class="col-md-6 col-12 p-4" id="volantering"></div>
-                    <div class="col-md-6 col-12 p-4" id="interests"></div>
-                    <div class="col-md-6 col-12 p-4" id="experiences"></div>
-                    <div class="col-md-6 col-12 p-4" id="skills"></div>
-                </div>
-                <!-- start about modals -->
-                <div class="modal fade" id="personal-modal" tabindex="-1" aria-labelledby="stageModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="stageModalLabel"></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                                </div>
+                                <h4>Education</h4>
+                                <p id="education-degree"></p>
+                                <p id="education-institution"></p>
+                                <p id="education-year"></p>
                             </div>
-                            <div class="modal-body">
-                                <!-- data appended here depends to the personal data above -->
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="about-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-map-marker-alt fa-3x text-primary"></i>
+                                </div>
+                                <h4>Location</h4>
+                                <p id="location"></p>
+                                <p id="phone"></p>
+                                <p id="email"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end about modal -->
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4">My Projects</h2>
-        <div class="row" id="portfolio-container">
-            <!-- Portfolio items will be loaded here dynamically -->
-        </div>
-    </section>
-
-    <!-- Swiper Section -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4">Testimonials</h2>
-        <div class="swiper-container">
-            <div class="swiper-wrapper" id="testimonial-container">
-                <!-- Testimonials will be loaded here dynamically -->
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Experience</h2>
+            <div class="row" id="experience-container">
+                <!-- Experience cards will be loaded here -->
             </div>
-            <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> -->
-    <script src="assets/axios/axios.min.js"></script>
-    <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script src="assets/glightbox/glightbox.min.js"></script>
-    <script src="assets/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/fontawesome/all.min.js"></script>
-    <script>
-        // طلب إذن الإشعارات
-        if (Notification.permission !== "granted") {
-            Notification.requestPermission();
-        }
-    </script>
-    <!-- <script>
-        // Load data from JSON
-        axios.get('data.json')
-            .then(response => {
-                const data = response.data;
-                document.getElementById('hero-title').innerText = data.name;
-                document.getElementById('nav-brand').innerText = data.name;
-                document.getElementById('hero-subtitle').innerText = data.title;
-                document.getElementById('about-description').innerText = data.objective;
+    <!-- Volunteering Section -->
+    <section id="volunteering" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Volunteering & Leadership</h2>
+            <div class="row" id="volunteering-container">
+                <!-- Volunteering cards will be loaded here -->
+            </div>
+        </div>
+    </section>
 
-                // Portfolio Projects
-                const portfolioContainer = document.getElementById('portfolio-container');
-                data.projects.forEach(project => {
-                    const item = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card portfolio-item">
-                                <img src="https://via.placeholder.com/350x200" alt="${project.title}">
-                                <div class="card-body">
-                                    <h5 class="card-title">${project.title}</h5>
-                                    <p class="card-text">${project.description || ''}</p>
-                                    <a href="${project.link}" class="btn btn-primary" target="_blank">View Project</a>
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Projects</h2>
+            
+            <!-- Project Filter Buttons -->
+            <div class="text-center mb-5">
+                <button class="btn btn-outline-primary me-2 active" data-filter="all">
+                    <i class="fas fa-th-large me-2"></i>All Projects
+                </button>
+                <button class="btn btn-outline-primary me-2" data-filter="electronics">
+                    <i class="fas fa-microchip me-2"></i>Electronics
+                </button>
+                <button class="btn btn-outline-primary" data-filter="web">
+                    <i class="fas fa-code me-2"></i>Web Development
+                </button>
+            </div>
+
+            <!-- Electronics Projects -->
+            <div class="row" id="electronics-projects">
+                <!-- Electronics project cards will be loaded here -->
+            </div>
+
+            <!-- Web Projects -->
+            <div class="row" id="web-projects">
+                <!-- Web project cards will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Skills</h2>
+            <div class="accordion" id="skillsAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTechnical">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTechnical" aria-expanded="true" aria-controls="collapseTechnical">
+                            <i class="fas fa-cogs me-2 text-primary"></i> Technical Skills
+                        </button>
+                    </h2>
+                    <div id="collapseTechnical" class="accordion-collapse collapse" aria-labelledby="headingTechnical" data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body" id="technical-skills">
+                            <!-- Technical skills badges will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTeaching">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeaching" aria-expanded="false" aria-controls="collapseTeaching">
+                            <i class="fas fa-chalkboard-teacher me-2 text-primary"></i> Teaching Skills
+                        </button>
+                    </h2>
+                    <div id="collapseTeaching" class="accordion-collapse collapse" aria-labelledby="headingTeaching" data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body" id="teaching-skills">
+                            <!-- Teaching skills badges will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingLanguages">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguages" aria-expanded="false" aria-controls="collapseLanguages">
+                            <i class="fas fa-language me-2 text-primary"></i> Languages
+                        </button>
+                    </h2>
+                    <div id="collapseLanguages" class="accordion-collapse collapse" aria-labelledby="headingLanguages" data-bs-parent="#skillsAccordion">
+                        <div class="accordion-body" id="language-skills">
+                            <!-- Language skills badges will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Certificates</h2>
+            <div class="row" id="certificates-container">
+                <!-- Certificates will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope fa-2x text-primary"></i>
+                                </div>
+                                <h5>Email</h5>
+                                <p id="contact-email"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone fa-2x text-primary"></i>
+                                </div>
+                                <h5>Phone</h5>
+                                <p id="contact-phone"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
+                                </div>
+                                <h5>Location</h5>
+                                <p id="contact-location"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-form-container">
+                        <h4 class="mb-4">
+                            <i class="fas fa-paper-plane me-2"></i>Send me a message
+                        </h4>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                    <input name="name" type="text" class="form-control" id="name" placeholder="Your Name" required>
                                 </div>
                             </div>
-                        </div>`;
-                    portfolioContainer.innerHTML += item;
-                });
-
-                // Certifications
-                const certificationsList = document.getElementById('certifications-list');
-                data.certifications.forEach(cert => {
-                    certificationsList.innerHTML += `<li class="list-group-item">${cert}</li>`;
-                });
-
-                // Testimonials
-                const testimonialContainer = document.getElementById('testimonial-container');
-                if (data.hackathons) {
-                    data.hackathons.forEach(hackathon => {
-                        const slide = `
-                            <div class="swiper-slide">
-                                <div class="text-center">
-                                    <p>${hackathon.name}</p>
-                                    <h5>${hackathon.role}</h5>
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                                 </div>
-                            </div>`;
-                        testimonialContainer.innerHTML += slide;
-                    });
-                }
+                            </div>
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-tag"></i>
+                                    </span>
+                                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-comment"></i>
+                                    </span>
+                                    <textarea name="message" class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" id="send-btn">
+                                <span id="send-text">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </span>
+                                <span id="send-loading" class="loading" style="display: none;"></span>
+                            </button>
+                        </form>
+                        <div id="form-message" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                new Swiper('.swiper-container', {
-                    loop: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
-                });
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2024 Ahmed Mohamed Abubakr. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-                GLightbox({ selector: '.portfolio-item img' });
-            })
-            .catch(error => console.error('Error loading JSON data:', error));
-    </script> -->
-    <script src="assets/styles/style.js"></script>
+    <!-- Fixed Social Link -->
+    <div class="fixed-social-link">
+        <a href="https://linktr.ee/ahmed_abubakr" class="social-link" target="_blank" rel="noopener" title="All Socials">
+            <i class="fas fa-link"></i>
+        </a>
+    </div>
+
+    <!-- Certificate Modal (Bootstrap) -->
+    <div class="modal fade" id="certificateModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="certificateModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="certificateModalBody">
+                    <!-- Certificate details will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove the Bootstrap project modal. Project images will use Venobox only. -->
+    <!-- Add a placeholder for hidden project detail containers (populated by JS). -->
+    <div id="venobox-project-details" style="display:none;"></div>
+
+    <script src="assets/library/js/bootstrap.bundle.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/portfolio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/venobox@2.0.7/dist/venobox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        GLightbox({ selector: '.glightbox' });
+      });
+    </script>
 </body>
-</html>
+</html> 
