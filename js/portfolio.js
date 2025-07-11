@@ -240,7 +240,7 @@ class Portfolio {
         if (images.length > 0) {
             imagesHtml = images.map((img, idx) => `
                 <a class="glightbox" data-gallery="project-gallery-${category}-${index}" href="${img}">
-                    <img src="${img}" class="img-fluid rounded mb-2 me-2" alt="Project Image ${idx + 1}" style="max-width: 80px; max-height: 60px;">
+                    <img src="${img}" class="img-fluid rounded mb-2 mx-2" alt="Project Image ${idx + 1}" style="max-width: 80px; max-height: 60px;">
                 </a>
             `).join('');
         }
@@ -261,7 +261,7 @@ class Portfolio {
         // Links
         let linksHtml = '';
         if (project.liveUrl) {
-            linksHtml += `<a href="${project.liveUrl}" class="btn btn-primary me-2 mb-2" target="_blank">View Live</a>`;
+            linksHtml += `<a href="${project.liveUrl}" class="btn btn-primary mx-2 mb-2" target="_blank">View Live</a>`;
         }
         if (project.sourceUrl) {
             linksHtml += `<a href="${project.sourceUrl}" class="btn btn-outline-primary mb-2" target="_blank">Source Code</a>`;
@@ -277,7 +277,7 @@ class Portfolio {
             const descWords = project.description.split(/\s+/);
             if (descWords.length > 20) {
                 const shortDesc = descWords.slice(0, 20).join(' ');
-                descHtml = `<p>${shortDesc}... <span class="read-more-link" role="button" tabindex="0" data-full="${encodeURIComponent(project.description)}" style="color:#007bff;cursor:pointer;text-decoration:underline;">Read more</span></p>`;
+                descHtml = `<p>${shortDesc}... <span class="read-more-link text-light" role="button" tabindex="0" data-full="${encodeURIComponent(project.description)}" style="color:#007bff;cursor:pointer;text-decoration:underline;">Read more</span></p>`;
             } else {
                 descHtml = `<p>${project.description}</p>`;
             }
@@ -400,8 +400,8 @@ class Portfolio {
                 </div>` : '';
             
             const pdfAvailable = cert.pdfUrl ? 
-                '<small class="text-success"><i class="fas fa-check-circle me-1"></i>PDF Available</small>' : 
-                '<small class="text-muted"><i class="fas fa-info-circle me-1"></i>Image Only</small>';
+                '<small class="text-success"><i class="fas fa-check-circle mx-1"></i>PDF Available</small>' : 
+                '<small class="text-muted"><i class="fas fa-info-circle mx-1"></i>Image Only</small>';
             
             card.innerHTML = `
                 <div class="certificate-card" onclick="portfolio.openCertificateModal('${cert.name}')" data-aos="fade-up" data-aos-delay="${index * 200}">
@@ -572,7 +572,7 @@ class Portfolio {
         // Links (View Live, Source Code)
         let linksHtml = '';
         if (project.liveUrl) {
-            linksHtml += `<a href="${project.liveUrl}" class="btn btn-primary me-2 mb-2" target="_blank">View Live</a>`;
+            linksHtml += `<a href="${project.liveUrl}" class="btn btn-primary mx-2 mb-2" target="_blank">View Live</a>`;
         }
         if (project.sourceUrl) {
             linksHtml += `<a href="${project.sourceUrl}" class="btn btn-outline-primary mb-2" target="_blank">Source Code</a>`;
@@ -609,11 +609,11 @@ class Portfolio {
                     <p class="mb-3">${certificate.description}</p>
                     ${certificate.pdfUrl ? `
                         <div class="mt-3">
-                            <a href="${certificate.pdfUrl}" target="_blank" class="btn btn-primary me-2">
-                                <i class="fas fa-eye me-2"></i>View Certificate
+                            <a href="${certificate.pdfUrl}" target="_blank" class="btn btn-primary mx-2">
+                                <i class="fas fa-eye mx-2"></i>View Certificate
                             </a>
                             <a href="${certificate.pdfUrl}" download class="btn btn-outline-primary">
-                                <i class="fas fa-download me-2"></i>Download PDF
+                                <i class="fas fa-download mx-2"></i>Download PDF
                             </a>
                         </div>
                     ` : ''}

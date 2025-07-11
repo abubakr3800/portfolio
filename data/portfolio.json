@@ -328,6 +328,38 @@
         ],
         "technologies": ["HTML", "CSS", "JavaScript", "Elegant Design"]
       }
+    ],
+    "trainings": [
+      {
+        "name": "Training Round 1",
+        "description": "First round of hands-on technical training. Activities and group work documented in photos.",
+        "images": [
+          "assets/projects/trainings/round1/495901978_696197882799860_7493469523286210135_n.jpg",
+          "assets/projects/trainings/round1/495327776_696197852799863_931217729397733699_n.jpg",
+          "assets/projects/trainings/round1/493536171_696197812799867_3249225372456362770_n.jpg",
+          "assets/projects/trainings/round1/497454268_696197769466538_6838686250324227271_n.jpg"
+        ]
+      },
+      {
+        "name": "Training Round 2",
+        "description": "Second round of training with more advanced topics and teamwork.",
+        "images": [
+          "assets/projects/trainings/round2/474757014_620179063735076_410042604282961207_n.jpg",
+          "assets/projects/trainings/round2/474700592_620179087068407_2604813575524862230_n.jpg",
+          "assets/projects/trainings/round2/474679717_620179050401744_4752956868832417379_n.jpg"
+        ]
+      },
+      {
+        "name": "Training Round 3",
+        "description": "Final round of training, including presentations and project showcases.",
+        "images": [
+          "assets/projects/trainings/round3/475150551_620726857013630_5392190333349076433_n.jpg",
+          "assets/projects/trainings/round3/475270742_620726847013631_987739818725296962_n.jpg",
+          "assets/projects/trainings/round3/475312161_620726887013627_6542723434114614300_n.jpg",
+          "assets/projects/trainings/round3/475152659_620726773680305_5383638379902104264_n.jpg",
+          "assets/projects/trainings/round3/475478845_620726550346994_7876322961145214720_n.jpg"
+        ]
+      }
     ]
   }
 } 
