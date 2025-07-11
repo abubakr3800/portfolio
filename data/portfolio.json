@@ -130,20 +130,138 @@
       {
         "name": "Hamming 47 Transmitter",
         "description": "Digital communication system transmitter implementing Hamming (4,7) error correction code",
-        "image": "assets/projects/electronics/hamming 47  transmitter.png",
+        "image": "assets/projects/electronics/hamming 47 transmitter/hamming 47  transmitter.png",
+        "images": ["assets/projects/electronics/hamming 47 transmitter/hamming 47  transmitter.png"],
         "technologies": ["Digital Electronics", "Error Correction", "Communication Systems"]
       },
       {
         "name": "Hamming 74 Receiver",
         "description": "Digital communication system receiver implementing Hamming (4,7) error correction code",
-        "image": "assets/projects/electronics/hamming 74 reciever.png",
+        "image": "assets/projects/electronics/hamming 74 reciever/hamming 74 reciever.png",
+        "images": ["assets/projects/electronics/hamming 74 reciever/hamming 74 reciever.png"],
         "technologies": ["Digital Electronics", "Error Correction", "Communication Systems"]
       },
       {
         "name": "Hamming 74 Receiver + 2BCD",
         "description": "Advanced digital system combining Hamming (7,4) error correction with BCD encoding",
-        "image": "assets/projects/electronics/hamming 74 reciever +2bcd.png",
+        "image": "assets/projects/electronics/hamming 74 reciever/hamming 74 reciever +2bcd.png",
+        "images": ["assets/projects/electronics/hamming 74 reciever/hamming 74 reciever +2bcd.png"],
         "technologies": ["Digital Electronics", "Error Correction", "BCD Encoding", "Communication Systems"]
+      },
+      {
+        "name": "Huffman Coding Visualizer",
+        "description": "A Python-based Huffman coding visualizer and compressor. Includes a demo video and source code.",
+        "image": "assets/projects/electronics/haufmann/huffman.png",
+        "images": ["assets/projects/electronics/haufmann/huffman.png"],
+        "repoUrl": "https://github.com/abubakr3800/huffman",
+        "media": [
+          "assets/projects/electronics/haufmann/21.05.2023_15.47.50_REC.mp4"
+        ],
+        "technologies": ["Python", "Data Compression", "Huffman Coding", "Algorithm Visualization"]
+      },
+      {
+        "name": "Laser Cutting (Digital Fabrication Training)",
+        "description": "Digital Fabrication Training | TIEC (MCIT) – in collaboration with EME & Orange | 2024\nHands-on training on CNC milling, 3D printing, and CO₂ laser cutting machines:\n• Operated Roland MDX-50 CNC machine to design mini circuit prototyping using SRP Player.\n• Used Prusa i3 MK3S+ 3D printer with PrusaSlicer to print functional small prototypes.\n• Engraved and cut acrylic and wood using CMA960 CO₂ laser cutter via CorelDRAW and RDWorks.",
+        "image": "assets/projects/electronics/laser/474454597_615981014154881_8354830801953897207_n.jpg",
+        "images": [
+          "assets/projects/electronics/laser/474454597_615981014154881_8354830801953897207_n.jpg",
+          "assets/projects/electronics/laser/474665199_615980774154905_8586200859831799244_n.jpg",
+          "assets/projects/electronics/laser/474206916_615981000821549_1438373154996348925_n.jpg",
+          "assets/projects/electronics/laser/WhatsApp Image 2025-07-11 at 5.21.25 PM.jpeg",
+          "assets/projects/electronics/laser/WhatsApp Image 2025-07-11 at 5.21.10 PM.jpeg"
+        ],
+        "media": [
+          "assets/projects/electronics/laser/474454597_615981014154881_8354830801953897207_n.jpg",
+          "assets/projects/electronics/laser/474665199_615980774154905_8586200859831799244_n.jpg",
+          "assets/projects/electronics/laser/474206916_615981000821549_1438373154996348925_n.jpg",
+          "assets/projects/electronics/laser/WhatsApp Image 2025-07-11 at 5.21.25 PM.jpeg",
+          "assets/projects/electronics/laser/WhatsApp Image 2025-07-11 at 5.21.10 PM.jpeg",
+          "assets/projects/electronics/laser/WhatsApp Video 2025-07-11 at 5.21.25 PM.mp4"
+        ],
+        "technologies": ["CO₂ Laser Cutter", "CorelDRAW", "RDWorks", "Digital Fabrication"]
+      },
+      {
+        "name": "CNC Milling (Digital Fabrication Training)",
+        "description": "Digital Fabrication Training | TIEC (MCIT) – in collaboration with EME & Orange | 2024\nHands-on training on CNC milling, 3D printing, and CO₂ laser cutting machines:\n• Operated Roland MDX-50 CNC machine to design mini circuit prototyping using SRP Player.\n• Used Prusa i3 MK3S+ 3D printer with PrusaSlicer to print functional small prototypes.\n• Engraved and cut acrylic and wood using CMA960 CO₂ laser cutter via CorelDRAW and RDWorks.",
+        "image": "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.28 PM (1).jpeg",
+        "images": [
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.28 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.28 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.26 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.39 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.39 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (3).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (2).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.37 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM.jpeg"
+        ],
+        "media": [
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.28 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.28 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 5.20.26 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.39 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.39 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (3).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (2).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM (1).jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.37 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Image 2025-07-11 at 1.39.38 PM.jpeg",
+          "assets/projects/electronics/cnc/WhatsApp Video 2025-07-11 at 1.39.38 PM.mp4",
+          "assets/projects/electronics/cnc/WhatsApp Video 2025-07-11 at 1.39.37 PM (1).mp4",
+          "assets/projects/electronics/cnc/WhatsApp Video 2025-07-11 at 1.39.37 PM.mp4",
+          "assets/projects/electronics/cnc/WhatsApp Video 2025-07-11 at 1.38.43 PM.mp4"
+        ],
+        "technologies": ["CNC Milling", "Roland MDX-50", "SRP Player", "Digital Fabrication"]
+      },
+      {
+        "name": "3D Printing (Digital Fabrication Training)",
+        "description": "Digital Fabrication Training | TIEC (MCIT) – in collaboration with EME & Orange | 2024\nHands-on training on CNC milling, 3D printing, and CO₂ laser cutting machines:\n• Operated Roland MDX-50 CNC machine to design mini circuit prototyping using SRP Player.\n• Used Prusa i3 MK3S+ 3D printer with PrusaSlicer to print functional small prototypes.\n• Engraved and cut acrylic and wood using CMA960 CO₂ laser cutter via CorelDRAW and RDWorks.",
+        "image": "assets/projects/electronics/3d/WhatsApp Image 2025-07-11 at 1.39.45 PM.jpeg",
+        "images": [
+          "assets/projects/electronics/3d/WhatsApp Image 2025-07-11 at 1.39.45 PM.jpeg",
+          "assets/projects/electronics/3d/WhatsApp Image 2025-07-11 at 1.39.43 PM.jpeg"
+        ],
+        "media": [
+          "assets/projects/electronics/3d/WhatsApp Image 2025-07-11 at 1.39.45 PM.jpeg",
+          "assets/projects/electronics/3d/WhatsApp Image 2025-07-11 at 1.39.43 PM.jpeg",
+          "assets/projects/electronics/3d/WhatsApp Video 2025-07-11 at 1.39.44 PM.mp4",
+          "assets/projects/electronics/3d/WhatsApp Video 2025-07-11 at 1.39.41 PM.mp4"
+        ],
+        "technologies": ["3D Printing", "Prusa i3 MK3S+", "PrusaSlicer", "Digital Fabrication"]
+      },
+      {
+        "name": "Handmade PCB",
+        "description": "Handmade PCB design and fabrication. Personal project involving manual etching, drilling, and soldering of custom circuit boards.",
+        "image": "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.48 PM.jpeg",
+        "images": [
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.48 PM.jpeg",
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.47 PM.jpeg",
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.46 PM.jpeg"
+        ],
+        "media": [
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.48 PM.jpeg",
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.47 PM.jpeg",
+          "assets/projects/electronics/pcb/WhatsApp Image 2025-07-11 at 1.39.46 PM.jpeg"
+        ],
+        "technologies": ["PCB Design", "Handmade PCB", "Etching", "Soldering"]
+      },
+      {
+        "name": "Buck Converter",
+        "description": "Design and simulation of a DC-DC buck converter. Includes schematic screenshots and project documentation.",
+        "image": "assets/projects/electronics/buck/Screenshot 2025-07-11 175511.png",
+        "images": [
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175622.png",
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175549.png",
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175511.png"
+        ],
+        "media": [
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175622.png",
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175549.png",
+          "assets/projects/electronics/buck/Screenshot 2025-07-11 175511.png",
+          "assets/projects/electronics/buck/buck2.pdf"
+        ],
+        "technologies": ["DC-DC Converter", "Power Electronics", "Simulation", "Circuit Design"]
       }
     ],
     "web": [

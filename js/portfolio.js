@@ -230,7 +230,7 @@ class Portfolio {
 
     createProjectCard(project, category, index) {
         const card = document.createElement('div');
-        card.className = 'col-lg-4 col-md-6 mt-5';
+        card.className = 'col-lg-4 col-md-6 mt-5 mb-5';
         card.setAttribute('data-category', category);
         card.style.animationDelay = `${index * 0.1}s`;
 
@@ -267,12 +267,28 @@ class Portfolio {
             linksHtml += `<a href="${project.sourceUrl}" class="btn btn-outline-primary mb-2" target="_blank">Source Code</a>`;
         }
 
+        // Description with word limit and Read more, or as a custom list if array
+        let descHtml = '';
+        if (Array.isArray(project.description)) {
+            descHtml = `<ul class="custom-desc-list">` + project.description.map(item => `
+                <li><span class='custom-bullet'></span>${item}</li>
+            `).join('') + `</ul>`;
+        } else {
+            const descWords = project.description.split(/\s+/);
+            if (descWords.length > 20) {
+                const shortDesc = descWords.slice(0, 20).join(' ');
+                descHtml = `<p>${shortDesc}... <span class="read-more-link" role="button" tabindex="0" data-full="${encodeURIComponent(project.description)}" style="color:#007bff;cursor:pointer;text-decoration:underline;">Read more</span></p>`;
+            } else {
+                descHtml = `<p>${project.description}</p>`;
+            }
+        }
+
         card.innerHTML = `
             <div class="project-card" style="cursor:pointer;">
                 ${mainImageHtml}
                 <div class="project-content">
                     <h4>${project.name}</h4>
-                    <p>${project.description}</p>
+                    ${descHtml}
                     ${techHtml}
                     <div class="d-flex flex-wrap align-items-center mb-2 project-thumbnails" style="height: 0;overflow: hidden;">
                         ${imagesHtml}
@@ -281,6 +297,23 @@ class Portfolio {
                 </div>
             </div>
         `;
+
+        // Add event listener for Read more
+        setTimeout(() => {
+            const readMore = card.querySelector('.read-more-link');
+            if (readMore) {
+                readMore.addEventListener('click', function(e) {
+                    e.preventDefault && e.preventDefault();
+                    alert(decodeURIComponent(this.getAttribute('data-full')));
+                });
+                readMore.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault && e.preventDefault();
+                        alert(decodeURIComponent(this.getAttribute('data-full')));
+                    }
+                });
+            }
+        }, 0);
 
         return card;
     }
@@ -358,7 +391,7 @@ class Portfolio {
 
         certificates.forEach((cert, index) => {
             const card = document.createElement('div');
-            card.className = 'col-lg-4 col-md-6';
+            card.className = 'col-lg-4 col-md-6 mt-5 mb-5';
             card.style.animationDelay = `${index * 0.2}s`;
             
             const pdfIndicator = cert.pdfUrl ? 
@@ -567,10 +600,10 @@ class Portfolio {
         document.getElementById('certificateModalTitle').textContent = certificate.name;
         document.getElementById('certificateModalBody').innerHTML = `
             <div class="row">
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center mt-5 mb-5">
                     <img src="${certificate.image}" alt="${certificate.name}" class="img-fluid rounded mb-3 certificate-modal-image">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mt-5 mb-5">
                     <h6 class="text-primary mb-2">${certificate.issuer}</h6>
                     <p class="text-muted mb-3">${certificate.date}</p>
                     <p class="mb-3">${certificate.description}</p>

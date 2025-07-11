@@ -1514,6 +1514,7 @@ section {
 #projects .btn {
     background: var(--gradient-1) !important;
     color: var(--text-on-light) !important;
+    margin: 5px;
 }
 
 .technology-tags {
@@ -1535,6 +1536,7 @@ section {
     display: inline-block;
     letter-spacing: 0.5px;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin: 5px;
 }
 .technology-tag:hover {
     background: #e0e0e0;
@@ -1748,4 +1750,33 @@ section {
     height: 44px;
     font-size: 1.2rem;
   }
+}
+
+/* Custom project description list */
+.custom-desc-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.2rem;
+}
+.custom-desc-list li {
+  position: relative;
+  padding-left: 1.8em;
+  margin-bottom: 0.7em;
+  color: var(--text-color, #232946);
+  font-size: 1.04em;
+  line-height: 1.6;
+}
+.custom-bullet {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.9em;
+  height: 0.9em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(102,126,234,0.13);
+  margin-right: 0.7em;
+  vertical-align: middle;
+  content: '';
 }
