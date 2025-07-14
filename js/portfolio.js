@@ -55,7 +55,8 @@ class Portfolio {
             },
             projects: {
                 electronics: [],
-                web: []
+                web: [],
+                trainings: []
             }
         };
     }
@@ -162,183 +163,356 @@ class Portfolio {
 
     populateProjects() {
         const { projects } = this.data;
-        // Clear containers
-        const electronicsContainer = document.getElementById('electronics-projects');
-        const webContainer = document.getElementById('web-projects');
-        electronicsContainer.innerHTML = '';
-        webContainer.innerHTML = '';
+        const projectsGrid = document.getElementById('projects-grid');
+        projectsGrid.innerHTML = '';
 
-        // Helper to render a project carousel card
-        const renderProjectCarousel = (project, category, index) => {
-            const galleryId = `carousel-${category}-${index}`;
-            const images = project.images || (project.image ? [project.image] : []);
-            const mainImage = images[0] || '';
-            // Only show the first image on the card
-            let mainImgHtml = mainImage ? `
-                <img src="${mainImage}" class="project-carousel-img" alt="${project.name}">
-            ` : '';
-            // Button to open GLightbox gallery
-            let btnHtml = images.length ? `
-                <button class="btn btn-primary project-carousel-btn" data-gallery="${galleryId}">View Details</button>
-            ` : '';
-            // Compose card
-            const html = `
-                <div class="project-carousel-card">
-                    ${mainImgHtml}
-                    <div class="project-carousel-title">${project.name}</div>
-                    ${btnHtml}
-                </div>
-            `;
-            return html;
-        };
-        // Render electronics projects
-        let electronicsHtml = '<div class="projects-carousel"><div class="carousel-scroll">';
-        projects.electronics.forEach((project, idx) => {
-            electronicsHtml += renderProjectCarousel(project, 'electronics', idx);
+        // Combine all projects with their categories
+        const allProjects = [
+            ...projects.electronics.map(project => ({ ...project, category: 'electronics' })),
+            ...projects.web.map(project => ({ ...project, category: 'web' })),
+            ...projects.trainings.map(project => ({ ...project, category: 'trainings' }))
+        ];
+
+        // Create modern project cards
+        allProjects.forEach((project, index) => {
+            const card = this.createModernProjectCard(project, index);
+            projectsGrid.appendChild(card);
         });
-        electronicsHtml += '</div></div>';
-        electronicsContainer.innerHTML = electronicsHtml;
-        // Render web projects
-        let webHtml = '<div class="projects-carousel"><div class="carousel-scroll">';
-        projects.web.forEach((project, idx) => {
-            webHtml += renderProjectCarousel(project, 'web', idx);
-        });
-        webHtml += '</div></div>';
-        webContainer.innerHTML = webHtml;
-        // Add event listeners for buttons to open GLightbox
-        setTimeout(() => {
-            document.querySelectorAll('.project-carousel-btn').forEach((btn, i) => {
-                btn.addEventListener('click', function() {
-                    const galleryId = btn.getAttribute('data-gallery');
-                    // Build GLightbox gallery for this project
-                    let project, images;
-                    if (btn.closest('#electronics-projects')) {
-                        project = projects.electronics[i];
-                        images = project.images || (project.image ? [project.image] : []);
-                    } else {
-                        project = projects.web[i];
-                        images = project.images || (project.image ? [project.image] : []);
-                    }
-                    const glightboxItems = images.map(img => ({ href: img, type: 'image' }));
-                    if (window.GLightbox) {
-                        GLightbox({ elements: glightboxItems });
-                    }
-                });
-            });
-        }, 100);
-    }
 
-    createProjectCard(project, category, index) {
-        const card = document.createElement('div');
-        card.className = 'col-lg-4 col-md-6 mt-5 mb-5';
-        card.setAttribute('data-category', category);
-        card.style.animationDelay = `${index * 0.1}s`;
-
-        // Images
-        const images = project.images || (project.image ? [project.image] : []);
-        let imagesHtml = '';
-        if (images.length > 0) {
-            imagesHtml = images.map((img, idx) => `
-                <a class="glightbox" data-gallery="project-gallery-${category}-${index}" href="${img}">
-                    <img src="${img}" class="img-fluid rounded mb-2 mx-2" alt="Project Image ${idx + 1}" style="max-width: 80px; max-height: 60px;">
-                </a>
-            `).join('');
-        }
-
-        // Main image as GLightbox trigger
-        let mainImageHtml = '';
-        if (images[0]) {
-            mainImageHtml = `
-                <a class="glightbox" data-gallery="project-gallery-${category}-${index}" href="${images[0]}">
-                    <img src="${images[0]}" alt="${project.name}" class="project-image mb-3 rounded" style="width:100%;height:200px;object-fit:cover;">
-                </a>
-            `;
-        }
-
-        // Technologies
-        const techHtml = `<div class="technology-tags mb-3">${project.technologies.map(tech => `<span class="technology-tag">${tech}</span>`).join('')}</div>`;
-
-        // Links
-        let linksHtml = '';
-        if (project.liveUrl) {
-            linksHtml += `<a href="${project.liveUrl}" class="btn btn-primary mx-2 mb-2" target="_blank">View Live</a>`;
-        }
-        if (project.sourceUrl) {
-            linksHtml += `<a href="${project.sourceUrl}" class="btn btn-outline-primary mb-2" target="_blank">Source Code</a>`;
-        }
-
-        // Description with word limit and Read more, or as a custom list if array
-        let descHtml = '';
-        if (Array.isArray(project.description)) {
-            descHtml = `<ul class="custom-desc-list">` + project.description.map(item => `
-                <li><span class='custom-bullet'></span>${item}</li>
-            `).join('') + `</ul>`;
-        } else {
-            const descWords = project.description.split(/\s+/);
-            if (descWords.length > 20) {
-                const shortDesc = descWords.slice(0, 20).join(' ');
-                descHtml = `<p>${shortDesc}... <span class="read-more-link text-light" role="button" tabindex="0" data-full="${encodeURIComponent(project.description)}" style="color:#007bff;cursor:pointer;text-decoration:underline;">Read more</span></p>`;
-            } else {
-                descHtml = `<p>${project.description}</p>`;
+        // Initialize GLightbox for all project images
+        if (window.GLightbox) {
+            // Destroy any existing GLightbox instances
+            if (window.currentLightbox) {
+                window.currentLightbox.destroy();
             }
         }
 
-        card.innerHTML = `
-            <div class="project-card" style="cursor:pointer;">
-                ${mainImageHtml}
-                <div class="project-content">
-                    <h4>${project.name}</h4>
-                    ${descHtml}
-                    ${techHtml}
-                    <div class="d-flex flex-wrap align-items-center mb-2 project-thumbnails" style="height: 0;overflow: hidden;">
-                        ${imagesHtml}
+        // Setup filter functionality
+        this.setupProjectFilters();
+    }
+
+    createModernProjectCard(project, index) {
+        const card = document.createElement('div');
+        card.className = 'project-card-modern';
+        card.setAttribute('data-category', project.category);
+        card.style.animationDelay = `${index * 0.1}s`;
+
+        const images = project.images || (project.image ? [project.image] : []);
+        const mainImage = images[0] || '';
+
+        // Create image container with overlay
+        const imageContainer = `
+            <div class="project-image-container">
+                ${mainImage ? `<img src="${mainImage}" class="project-main-image" alt="${project.name}">` : ''}
+                <div class="project-overlay">
+                    <div class="project-overlay-buttons">
+                        ${images.length > 1 ? `<button class="overlay-btn gallery-btn" data-gallery="project-${project.category}-${index}">
+                            <i class="fas fa-images"></i> Gallery
+                        </button>` : ''}
+                        <button class="overlay-btn details-btn" data-project-index="${index}" data-project-category="${project.category}">
+                            <i class="fas fa-info-circle"></i> Details
+                        </button>
                     </div>
-                    <div>${linksHtml}</div>
                 </div>
             </div>
         `;
 
-        // Add event listener for Read more
+        // Create technology badges
+        const techBadges = project.technologies ? 
+            project.technologies.map(tech => `<span class="tech-badge">${tech}</span>`).join('') : '';
+
+        // Create project links
+        const links = [];
+        if (project.liveUrl) {
+            links.push(`<a href="${project.liveUrl}" class="project-link-btn" target="_blank">
+                <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>`);
+        }
+        if (project.repoUrl) {
+            links.push(`<a href="${project.repoUrl}" class="project-link-btn" target="_blank">
+                <i class="fab fa-github"></i> Source Code
+            </a>`);
+        }
+
+        // Create gallery thumbnails
+        const galleryThumbs = images.length > 1 ? `
+            <div class="project-gallery-grid-modern">
+                ${images.slice(0, 4).map((img, idx) => `
+                    <img src="${img}" class="gallery-thumb-modern" data-gallery="project-${project.category}-${index}" alt="Gallery ${idx + 1}">
+                `).join('')}
+                ${images.length > 4 ? `<div class="gallery-thumb-modern" style="display: flex; align-items: center; justify-content: center; background: var(--gradient-1); color: white; font-weight: bold;">
+                    +${images.length - 4}
+                </div>` : ''}
+            </div>
+        ` : '';
+
+        // Create project stats
+        const stats = `
+            <div class="project-stats">
+                <div class="project-stat">
+                    <span class="project-stat-number">${images.length}</span>
+                    <span class="project-stat-label">Images</span>
+                </div>
+                <div class="project-stat">
+                    <span class="project-stat-number">${project.technologies ? project.technologies.length : 0}</span>
+                    <span class="project-stat-label">Technologies</span>
+                </div>
+                <div class="project-stat">
+                    <span class="project-stat-number">${links.length}</span>
+                    <span class="project-stat-label">Links</span>
+                </div>
+            </div>
+        `;
+
+        // Create description with read more functionality
+        let description = project.description;
+        let needsReadMore = false;
+        let fullDescription = '';
+
+        if (Array.isArray(description)) {
+            fullDescription = `<ul class="custom-desc-list">${description.map(item => `<li><span class="custom-bullet"></span>${item}</li>`).join('')}</ul>`;
+            if (description.length > 3) {
+                description = `<ul class="custom-desc-list">${description.slice(0, 3).map(item => `<li><span class="custom-bullet"></span>${item}</li>`).join('')}</ul>`;
+                needsReadMore = true;
+            } else {
+                description = fullDescription;
+            }
+        } else {
+            const descWords = project.description.split(/\s+/);
+            fullDescription = `<p>${project.description}</p>`;
+            if (descWords.length > 20) {
+                description = `<p>${descWords.slice(0, 20).join(' ')}...</p>`;
+                needsReadMore = true;
+            } else {
+                description = `<p>${project.description}</p>`;
+            }
+        }
+
+        if (needsReadMore) {
+            description += `<button class="read-more-btn" data-full="${encodeURIComponent(fullDescription)}" data-project="${project.name}">Read More</button>`;
+        }
+
+        card.innerHTML = `
+            ${imageContainer}
+            <div class="project-content-modern">
+                <h3 class="project-title-modern">${project.name}</h3>
+                <div class="project-description-modern">${description}</div>
+                ${techBadges ? `<div class="project-tech-stack">${techBadges}</div>` : ''}
+                ${galleryThumbs}
+                ${links.length > 0 ? `<div class="project-links-modern">${links.join('')}</div>` : ''}
+                ${stats}
+            </div>
+        `;
+
+        // Add event listeners for overlay buttons
         setTimeout(() => {
-            const readMore = card.querySelector('.read-more-link');
-            if (readMore) {
-                readMore.addEventListener('click', function(e) {
-                    e.preventDefault && e.preventDefault();
-                    alert(decodeURIComponent(this.getAttribute('data-full')));
-                });
-                readMore.addEventListener('keydown', function(e) {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault && e.preventDefault();
-                        alert(decodeURIComponent(this.getAttribute('data-full')));
+            // Gallery button
+            const galleryBtn = card.querySelector('.gallery-btn');
+            if (galleryBtn) {
+                galleryBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    console.log('Gallery button clicked for project:', project.name);
+                    console.log('Images:', images);
+                    
+                    // Test if images exist
+                    images.forEach((img, idx) => {
+                        const testImg = new Image();
+                        testImg.onload = () => console.log(`Image ${idx} loaded successfully:`, img);
+                        testImg.onerror = () => console.log(`Image ${idx} failed to load:`, img);
+                        testImg.src = img;
+                    });
+                    
+                    // Create GLightbox gallery
+                    const glightboxItems = images.map(img => ({
+                        href: img,
+                        type: 'image',
+                        alt: `${project.name} - Image`
+                    }));
+                    
+                    console.log('GLightbox items:', glightboxItems);
+                    
+                    if (window.GLightbox) {
+                        console.log('GLightbox is available');
+                        // Destroy any existing lightbox
+                        if (window.currentLightbox) {
+                            window.currentLightbox.destroy();
+                        }
+                        
+                        const lightbox = GLightbox({
+                            elements: glightboxItems,
+                            touchNavigation: true,
+                            keyboardNavigation: true,
+                            closeOnOutsideClick: true,
+                            draggable: true,
+                            zoomable: true
+                        });
+                        
+                        // Store the lightbox instance globally
+                        window.currentLightbox = lightbox;
+                        lightbox.open();
+                    } else {
+                        console.log('GLightbox not available, using fallback');
+                        // Create a simple modal gallery
+                        this.createSimpleGallery(images, project.name);
                     }
                 });
             }
+
+            // Details button
+            const detailsBtn = card.querySelector('.details-btn');
+            if (detailsBtn) {
+                detailsBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const readMoreBtn = card.querySelector('.read-more-btn');
+                    if (readMoreBtn) {
+                        readMoreBtn.click();
+                    } else {
+                        // If no read more button, show full description directly
+                        const modal = document.getElementById('descModal');
+                        document.getElementById('descModalLabel').textContent = project.name;
+                        let fullDesc = '';
+                        if (Array.isArray(project.description)) {
+                            fullDesc = `<ul class="custom-desc-list">${project.description.map(item => `<li><span class="custom-bullet"></span>${item}</li>`).join('')}</ul>`;
+                        } else {
+                            fullDesc = `<p>${project.description}</p>`;
+                        }
+                        document.getElementById('descModalBody').innerHTML = fullDesc;
+                        document.getElementById('descModalBody').classList.add('text-white');
+                        new bootstrap.Modal(modal).show();
+                    }
+                });
+            }
+
+            // Read more button
+            const readMoreBtn = card.querySelector('.read-more-btn');
+            if (readMoreBtn) {
+                readMoreBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const modal = document.getElementById('descModal');
+                    document.getElementById('descModalLabel').textContent = readMoreBtn.getAttribute('data-project');
+                    document.getElementById('descModalBody').innerHTML = decodeURIComponent(readMoreBtn.getAttribute('data-full'));
+                    new bootstrap.Modal(modal).show();
+                });
+            }
+
+            // Gallery thumbnails
+            const galleryThumbs = card.querySelectorAll('.gallery-thumb-modern');
+            galleryThumbs.forEach((thumb, idx) => {
+                if (thumb.tagName === 'IMG') {
+                    thumb.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        // Create GLightbox gallery starting from clicked image
+                        const glightboxItems = images.map(img => ({
+                            href: img,
+                            type: 'image',
+                            alt: `${project.name} - Image`
+                        }));
+                        
+                        if (window.GLightbox) {
+                            // Destroy any existing lightbox
+                            if (window.currentLightbox) {
+                                window.currentLightbox.destroy();
+                            }
+                            
+                            const lightbox = GLightbox({
+                                elements: glightboxItems,
+                                startAt: idx,
+                                touchNavigation: true,
+                                keyboardNavigation: true,
+                                closeOnOutsideClick: true,
+                                draggable: true,
+                                zoomable: true
+                            });
+                            
+                            // Store the lightbox instance globally
+                            window.currentLightbox = lightbox;
+                            lightbox.open();
+                        } else {
+                            // Fallback: create simple gallery
+                            this.createSimpleGallery(images, project.name);
+                        }
+                    });
+                }
+            });
         }, 0);
 
         return card;
     }
 
-    // After rendering all project cards, re-initialize GLightbox
-    populateProjects() {
-        const { projects } = this.data;
-        // Electronics Projects
-        const electronicsContainer = document.getElementById('electronics-projects');
-        electronicsContainer.innerHTML = '';
-        projects.electronics.forEach((project, index) => {
-            const card = this.createProjectCard(project, 'electronics', index);
-            electronicsContainer.appendChild(card);
+    setupProjectFilters() {
+        const filterButtons = document.querySelectorAll('.project-filter-btn');
+        const projectCards = document.querySelectorAll('.project-card-modern');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
         });
-        // Web Projects
-        const webContainer = document.getElementById('web-projects');
-        webContainer.innerHTML = '';
-        projects.web.forEach((project, index) => {
-            const card = this.createProjectCard(project, 'web', index);
-            webContainer.appendChild(card);
-        });
-        // Re-initialize GLightbox
-        if (window.GLightbox) {
-            GLightbox({ selector: '.glightbox' });
+    }
+
+    createSimpleGallery(images, projectName) {
+        // Create a simple modal gallery
+        const modal = document.createElement('div');
+        modal.className = 'modal fade';
+        modal.id = 'simpleGalleryModal';
+        modal.innerHTML = `
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">${projectName} - Gallery</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="gallery-container">
+                            ${images.map((img, idx) => `
+                                <div class="gallery-item mb-3">
+                                    <img src="${img}" class="img-fluid rounded" alt="Gallery Image ${idx + 1}">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Remove existing modal if any
+        const existingModal = document.getElementById('simpleGalleryModal');
+        if (existingModal) {
+            existingModal.remove();
         }
+        
+        // Add modal to body
+        document.body.appendChild(modal);
+        
+        // Show modal
+        const bootstrapModal = new bootstrap.Modal(modal);
+        bootstrapModal.show();
+        
+        // Remove modal from DOM after it's hidden
+        modal.addEventListener('hidden.bs.modal', () => {
+            modal.remove();
+        });
     }
 
     populateSkills() {
@@ -420,25 +594,13 @@ class Portfolio {
     }
 
     setupEventListeners() {
-        // Project filter buttons
-        const filterButtons = document.querySelectorAll('[data-filter]');
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                this.filterProjects(e.target.dataset.filter);
-                
-                // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                e.target.classList.add('active');
-            });
-        });
-
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(52, 58, 64, 0.95)';
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
             } else {
-                navbar.style.background = '#343a40';
+                navbar.style.background = '#0f172a';
             }
         });
 
@@ -450,6 +612,14 @@ class Portfolio {
                 this.handleContactForm();
             });
         }
+
+        // Certificate modal triggers
+        document.querySelectorAll('.certificate-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const certificateName = card.querySelector('h4').textContent;
+                this.openCertificateModal(certificateName);
+            });
+        });
 
         // Add hover effects to cards
         this.addHoverEffects();
@@ -503,7 +673,7 @@ class Portfolio {
         }, observerOptions);
 
         // Observe all cards and sections
-        document.querySelectorAll('.about-card, .experience-card, .volunteering-card, .project-card, .skills-card, .certificate-card').forEach(el => {
+        document.querySelectorAll('.about-card, .experience-card, .volunteering-card, .project-card-modern, .skills-card, .certificate-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'all 0.6s ease';
@@ -513,7 +683,7 @@ class Portfolio {
 
     addHoverEffects() {
         // Add creative hover effects to cards
-        document.querySelectorAll('.project-card, .certificate-card, .experience-card, .volunteering-card').forEach(card => {
+        document.querySelectorAll('.project-card-modern, .certificate-card, .experience-card, .volunteering-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-10px) scale(1.02)';
             });
@@ -524,20 +694,7 @@ class Portfolio {
         });
     }
 
-    filterProjects(category) {
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        projectCards.forEach(card => {
-            const cardCategory = card.parentElement.getAttribute('data-category');
-            
-            if (category === 'all' || cardCategory === category) {
-                card.parentElement.style.display = 'block';
-                card.parentElement.style.animation = 'fadeIn 0.5s ease';
-            } else {
-                card.parentElement.style.display = 'none';
-            }
-        });
-    }
+
 
     openProjectModal(category, projectName) {
         const { projects } = this.data;
@@ -609,10 +766,10 @@ class Portfolio {
                     <p class="mb-3">${certificate.description}</p>
                     ${certificate.pdfUrl ? `
                         <div class="mt-3">
-                            <a href="${certificate.pdfUrl}" target="_blank" class="btn btn-primary mx-2">
+                            <a href="${certificate.pdfUrl}" target="_blank" class="btn btn-primary my-2">
                                 <i class="fas fa-eye mx-2"></i>View Certificate
                             </a>
-                            <a href="${certificate.pdfUrl}" download class="btn btn-outline-primary">
+                            <a href="${certificate.pdfUrl}" download class="btn btn-outline-primary my-2">
                                 <i class="fas fa-download mx-2"></i>Download PDF
                             </a>
                         </div>

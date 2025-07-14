@@ -143,31 +143,29 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5 bg-light projects-section">
         <div class="container">
             <h2 class="section-title text-center mb-5">Projects</h2>
             
             <!-- Project Filter Buttons -->
-            <div class="text-center mb-5">
-                <button class="btn btn-outline-primary me-2 active" data-filter="all">
+            <div class="project-filter-container">
+                <button class="project-filter-btn active" data-filter="all">
                     <i class="fas fa-th-large me-2"></i>All Projects
                 </button>
-                <button class="btn btn-outline-primary me-2" data-filter="electronics">
+                <button class="project-filter-btn" data-filter="electronics">
                     <i class="fas fa-microchip me-2"></i>Electronics
                 </button>
-                <button class="btn btn-outline-primary" data-filter="web">
+                <button class="project-filter-btn" data-filter="web">
                     <i class="fas fa-code me-2"></i>Web Development
+                </button>
+                <button class="project-filter-btn" data-filter="trainings">
+                    <i class="fas fa-graduation-cap me-2"></i>Trainings
                 </button>
             </div>
 
-            <!-- Electronics Projects -->
-            <div class="row" id="electronics-projects">
-                <!-- Electronics project cards will be loaded here -->
-            </div>
-
-            <!-- Web Projects -->
-            <div class="row" id="web-projects">
-                <!-- Web project cards will be loaded here -->
+            <!-- Projects Grid -->
+            <div class="project-grid" id="projects-grid">
+                <!-- Project cards will be loaded here -->
             </div>
         </div>
     </section>
@@ -351,6 +349,21 @@
     <!-- Remove the Bootstrap project modal. Project images will use Venobox only. -->
     <!-- Add a placeholder for hidden project detail containers (populated by JS). -->
     <div id="venobox-project-details" style="display:none;"></div>
+
+    <!-- Project Description Modal -->
+    <div class="modal fade" id="descModal" tabindex="-1" aria-labelledby="descModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="descModalLabel">Project Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="descModalBody">
+            <!-- Full description will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="assets/library/js/bootstrap.bundle.min.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
