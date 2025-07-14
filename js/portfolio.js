@@ -20,7 +20,7 @@ class Portfolio {
 
     async loadData() {
         try {
-            const response = await fetch('data/portfolio.json');
+            const response = await fetch('data/data.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -232,6 +232,7 @@ class Portfolio {
             links.push(`<a href="${project.repoUrl}" class="project-link-btn" target="_blank">
                 <i class="fab fa-github"></i> Source Code
             </a>`);
+            console.log(project);
         }
 
         // Create gallery thumbnails

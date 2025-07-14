@@ -154,6 +154,7 @@
         "image": "assets/projects/electronics/haufmann/huffman.png",
         "images": ["assets/projects/electronics/haufmann/huffman.png"],
         "repoUrl": "https://github.com/abubakr3800/huffman",
+        "liveUrl": "https://abubakr3800.github.io/huffman",
         "media": [
           "assets/projects/electronics/haufmann/21.05.2023_15.47.50_REC.mp4"
         ],
