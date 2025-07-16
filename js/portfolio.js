@@ -39,7 +39,8 @@ class Portfolio {
                 location: "Giza, Egypt",
                 phone: "01113284597",
                 email: "ahmed.mo.abubakr@gmail.com",
-                objective: "To obtain an R&D Engineer position where I can apply my academic background in electronics, hands-on experience in analog IC layout design, and practical skills in tools such as Cadence, Proteus, and Altium to contribute to innovation and development in electronic systems."
+                objective: "To obtain an R&D Engineer position where I can apply my academic background in electronics, hands-on experience in analog IC layout design, and practical skills in tools such as Cadence, Proteus, and Altium to contribute to innovation and development in electronic systems.",
+                cv:"assets/cv/ahmed-mohamed-abubakr.pdf"
             },
             education: {
                 degree: "Bachelor of Electronics and Communications Engineering",
@@ -111,6 +112,11 @@ class Portfolio {
         document.getElementById('location').textContent = personal.location;
         document.getElementById('phone').textContent = personal.phone;
         document.getElementById('email').textContent = personal.email;
+        if (personal.cv) {
+            document.getElementById('cv-link').innerHTML = `<a href="${personal.cv}" target="_blank" class="btn btn-outline-light text-dark btn-sm mt-2"><i class="fas fa-file-pdf me-2"></i>Download CV</a>`;
+        } else {
+            document.getElementById('cv-link').innerHTML = '';
+        }
     }
 
     populateExperience() {
